@@ -1,0 +1,12 @@
+version: "3"
+services:
+  webservice:
+    build: build
+    privileged: true
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/opt/webservice
+    environment:
+      - "NODE_ENV=docker"
+    tty: true
