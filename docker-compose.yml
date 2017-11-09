@@ -5,8 +5,29 @@ services:
     privileged: true
     ports:
       - 8000:8000
+    links:
+      - mysql
     volumes:
       - .:/opt/webservice
     environment:
       - "NODE_ENV=docker"
     tty: true
+  mysql:
+    image: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: webservice_dev
+    volumes:
+        - .cache/mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - 8080:80
