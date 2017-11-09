@@ -5,7 +5,7 @@
    - npm
 
 
-   ## Install
+
      npm install
      npm start
 
@@ -21,7 +21,7 @@ Example:
    - npm
 
 
-   ## Install
+   ## Install
 ```
 docker-compose build
 docker-compose up -d
