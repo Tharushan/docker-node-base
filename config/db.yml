@@ -1,0 +1,10 @@
+default:
+  host: localhost
+  user: root
+  password: root_password
+  database: webservice_dev
+docker:
+  host: mysql
+  user: root
+  password: root_password
+  database: webservice_dev
